@@ -38,7 +38,7 @@
         <source-file src="src/android/AndroidNotchStatusBar.java" target-dir="src/com/tobspr/AndroidNotchStatusBar" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AndroidNotchStatusBar">
-                <param name="android-package" value="com.tobspr.AndroidNotchStatusBar.AndroidNotchStatusBar" />
+                <param name="android-package" value="com.vehiclemind.AndroidNotchStatusBar.AndroidNotchStatusBar" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
