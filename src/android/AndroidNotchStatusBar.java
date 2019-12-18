@@ -45,8 +45,8 @@ public class AndroidNotchStatusBar extends CordovaPlugin {
             return true;
         }
 
-        // Getting the statusbar height, in case we can’t find a notch
-        int statusBarHeight = 0;
+        // Getting the statusbar height, in case we can’t find a notch (which has a 24dp default value)
+        int statusBarHeight = 24 *activity.getResources().getDisplayMetrics().density;
         int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", activity.getPackageName());
         if (resourceId > 0) {
             statusBarHeight = activity.getResources().getDimensionPixelSize(resourceId);
