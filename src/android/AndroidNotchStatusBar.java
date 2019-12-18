@@ -52,7 +52,7 @@ public class AndroidNotchStatusBar extends CordovaPlugin {
         }
 
         // Getting the statusbar height, in case we can’t get a notch;
-        int statusBarHeight = this.statusBarHeight(activity.getResources());
+        int statusBarHeight = 24;
 
         if(Build.VERSION.SDK_INT < 28) {
             // DisplayCutout is not available on api < 28
