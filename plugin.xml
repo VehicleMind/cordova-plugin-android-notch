@@ -23,22 +23,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-android-notch"
     version="1.0.0">
-    <name>AndroidNotch</name>
-    <description>Cordova AndroidNotch Plugin</description>
+    <name>AndroidNotchStatusBar</name>
+    <description>Cordova AndroidNotchStatusBar Plugin</description>
     <license>MIT</license>
     <keywords>cordova,android,notch</keywords>
     <engines>
             <engine name="cordova" version=">=3.0.0" />
     </engines>
     <js-module src="www/notch.js" name="notch">
-        <clobbers target="window.AndroidNotch" />
+        <clobbers target="window.AndroidNotchStatusBar" />
     </js-module>
 
     <platform name="android">
-        <source-file src="src/android/AndroidNotch.java" target-dir="src/com/tobspr/androidnotch" />
+        <source-file src="src/android/AndroidNotchStatusBar.java" target-dir="src/com/tobspr/AndroidNotchStatusBar" />
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AndroidNotch">
-                <param name="android-package" value="com.tobspr.androidnotch.AndroidNotch" />
+            <feature name="AndroidNotchStatusBar">
+                <param name="android-package" value="com.tobspr.AndroidNotchStatusBar.AndroidNotchStatusBar" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>

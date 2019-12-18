@@ -1,7 +1,7 @@
 
 
 
-package com.tobspr.androidnotch;
+package com.tobspr.AndroidNotchStatusBar;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -24,9 +24,17 @@ import org.json.JSONException;
 import java.util.Arrays;
 
 
-public class AndroidNotch extends CordovaPlugin {
-    private static final String TAG = "AndroidNotch";
+public class AndroidNotchStatusBar extends CordovaPlugin {
+    private static final String TAG = "AndroidNotchStatusBar";
 
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }   
+        return result;
+    }
     
     /**
      * Executes the request and returns PluginResult.
@@ -49,7 +57,7 @@ public class AndroidNotch extends CordovaPlugin {
         if(Build.VERSION.SDK_INT < 28) {
 
             // DisplayCutout is not available on api < 28
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, 0));
+            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, this.getStatusBarHeight()));
             return true;
         }
 

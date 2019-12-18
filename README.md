@@ -8,11 +8,11 @@ For iOs, the insets are available as constant() and env() variables. However thi
 
 ```js
 
-window.AndroidNotch.hasCutout(success => function(cutout) => {
+window.AndroidNotchStatusBar.hasCutout(success => function(cutout) => {
     alert("Cutout: " + cutout);
 }));
 
-window.AndroidNotch.getInsetTop(success => function(insetSize) => {
+window.AndroidNotchStatusBar.getInsetTop(success => function(insetSize) => {
     alert("Top Inset: " + insetSize);
 }));
 
@@ -26,24 +26,24 @@ If you want to use those variables in css, here's a possibility:
 
 // Call this on resize or orientationchange, but *after* the deviceready event
 function detectInsets() {
-    if (window.AndroidNotch) {
+    if (window.AndroidNotchStatusBar) {
         const style = document.documentElement.style;
 
         // Apply insets as css variables
 
-        window.AndroidNotch.getInsetTop(px => {
+        window.AndroidNotchStatusBar.getInsetTop(px => {
             style.setProperty("--notch-inset-top", px + "px");
         }, (err) => console.error("Failed to get insets top:", err));
         
-        window.AndroidNotch.getInsetRight(px => {
+        window.AndroidNotchStatusBar.getInsetRight(px => {
             style.setProperty("--notch-inset-right", px + "px");
         }, (err) => console.error("Failed to get insets right:", err));
         
-        window.AndroidNotch.getInsetBottom(px => {
+        window.AndroidNotchStatusBar.getInsetBottom(px => {
             style.setProperty("--notch-inset-bottom", px + "px");
         }, (err) => console.error("Failed to get insets bottom:", err));
         
-        window.AndroidNotch.getInsetLeft(px => {
+        window.AndroidNotchStatusBar.getInsetLeft(px => {
             style.setProperty("--notch-inset-left", px + "px");
         }, (err) => console.error("Failed to get insets left:", err));
     }

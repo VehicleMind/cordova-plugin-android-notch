@@ -2,34 +2,34 @@
 
 var run = require("cordova/exec");
 
-var AndroidNotch = {
+var AndroidNotchStatusBar = {
 
 
     hasCutout: function(success, error) {
-        run(success, error, "AndroidNotch", "hasCutout");
+        run(success, error, "AndroidNotchStatusBar", "hasCutout");
     },
 
     setLayout: function(success, error) {
-        run(success, error, "AndroidNotch", "setLayout");
+        run(success, error, "AndroidNotchStatusBar", "setLayout");
     },
 
     getInsetTop: function (success, error) {
-        run(success, error, "AndroidNotch", "getInsetsTop");
+        run(success, error, "AndroidNotchStatusBar", "getInsetsTop");
     },
     
     getInsetRight: function (success, error) {
-        run(success, error, "AndroidNotch", "getInsetsRight");
+        run(success, error, "AndroidNotchStatusBar", "getInsetsRight");
     },
     
     getInsetBottom: function (success, error) {
-        run(success, error, "AndroidNotch", "getInsetsBottom");
+        run(success, error, "AndroidNotchStatusBar", "getInsetsBottom");
     },
     
     getInsetLeft: function (success, error) {
-        run(success, error, "AndroidNotch", "getInsetsLeft");
+        run(success, error, "AndroidNotchStatusBar", "getInsetsLeft");
     }
 
 };
 
 
-module.exports = AndroidNotch;
+module.exports = AndroidNotchStatusBar;
