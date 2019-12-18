@@ -26,7 +26,7 @@ import java.util.Arrays;
 
 public class AndroidNotchStatusBar extends CordovaPlugin {
     private static final String TAG = "AndroidNotchStatusBar";
-    
+
     /**
      * Executes the request and returns PluginResult.
      *
@@ -47,7 +47,7 @@ public class AndroidNotchStatusBar extends CordovaPlugin {
 
         // Getting the statusbar height, in case we can’t find a notch
         int statusBarHeight = 0;
-        int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", activity.getPackageName());
         if (resourceId > 0) {
             statusBarHeight = activity.getResources().getDimensionPixelSize(resourceId);
         }   
