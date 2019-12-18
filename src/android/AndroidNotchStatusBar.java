@@ -39,6 +39,7 @@ public class AndroidNotchStatusBar extends CordovaPlugin {
     public boolean execute(final String action, final CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
         final Activity activity = this.cordova.getActivity();
         final Window window = activity.getWindow();
+        float density = activity.getResources().getDisplayMetrics().density;
 
         if ("setLayout".equals("action")) {
             this.webView.getView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -46,10 +47,10 @@ public class AndroidNotchStatusBar extends CordovaPlugin {
         }
 
         // Getting the statusbar height, in case we can’t find a notch (which has a 24dp default value)
-        int statusBarHeight = 24 * Math.round(activity.getResources().getDisplayMetrics().density);
+        float statusBarHeight = 24.0 / activity.getResources().getDisplayMetrics().density;
         int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", activity.getPackageName());
         if (resourceId > 0) {
-            statusBarHeight = activity.getResources().getDimensionPixelSize(resourceId);
+            statusBarHeight = (float) activity.getResources().getDimensionPixelSize(resourceId);
         }   
 
         if(Build.VERSION.SDK_INT < 28) {
@@ -60,8 +61,6 @@ public class AndroidNotchStatusBar extends CordovaPlugin {
 
         final WindowInsets insets = getInsets();
         final DisplayCutout cutout = insets.getDisplayCutout();
-
-        float density = activity.getResources().getDisplayMetrics().density;
 
         if ("hasCutout".equals(action)) {
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, cutout != null));
