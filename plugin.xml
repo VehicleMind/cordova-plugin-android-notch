@@ -35,7 +35,7 @@
     </js-module>
 
     <platform name="android">
-        <source-file src="src/android/AndroidNotchStatusBar.java" target-dir="src/com/tobspr/AndroidNotchStatusBar" />
+        <source-file src="src/android/AndroidNotchStatusBar.java" target-dir="src/com/vehiclemind/AndroidNotchStatusBar" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AndroidNotchStatusBar">
                 <param name="android-package" value="com.vehiclemind.AndroidNotchStatusBar.AndroidNotchStatusBar" />

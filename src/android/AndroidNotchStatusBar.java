@@ -1,7 +1,7 @@
 
 
 
-package com.tobspr.AndroidNotchStatusBar;
+package com.vehiclemind.AndroidNotchStatusBar;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
