@@ -28,6 +28,10 @@ import java.util.Arrays;
 public class AndroidNotchStatusBar extends CordovaPlugin {
     private static final String TAG = "AndroidNotchStatusBar";
 
+    private static int statusBarHeight(android.content.res.Resources res) {
+        return (int) (24 * res.getDisplayMetrics().density);
+    }
+
     /**
      * Executes the request and returns PluginResult.
      *
@@ -48,9 +52,7 @@ public class AndroidNotchStatusBar extends CordovaPlugin {
         }
 
         // Getting the statusbar height, in case we can’t get a notch;
-        Rect rectangle = new Rect();
-        window.getDecorView().getWindowVisibleDisplayFrame(rectangle);
-        int statusBarHeight = rectangle.top;
+        int statusBarHeight = this.statusBarHeight(activity.getResources());
 
         if(Build.VERSION.SDK_INT < 28) {
             // DisplayCutout is not available on api < 28
