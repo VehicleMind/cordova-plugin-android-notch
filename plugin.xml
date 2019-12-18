@@ -21,7 +21,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-android-notch"
+    id="cordova-plugin-android-notchstatusbar"
     version="1.0.0">
     <name>AndroidNotchStatusBar</name>
     <description>Cordova AndroidNotchStatusBar Plugin</description>
